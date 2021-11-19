@@ -2,10 +2,10 @@ name: Telegram Bot Set Up
 
 on:
   workflow_dispatch:
-  inputs:
-    gdriveid:
-      description: 'Your google drive folder id'
-      required: true
+    inputs:
+      gdriveid:
+        description: 'Your google drive folder id'
+        required: true
 
 jobs:
   build:
