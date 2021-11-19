@@ -1,4 +1,4 @@
-name: Telegram Bot Set Up
+name: Mirror Setup
 
 on:
   workflow_dispatch:
@@ -12,15 +12,11 @@ jobs:
     name: Setting up Bot Environment
     runs-on: ubuntu-latest
     steps:
-      - name: Installing Required Environment
-        uses: actions/setup-python@v2
-        with:
-          python-version: 3.9
       - name: Preparing Source Code
         uses: actions/checkout@v2
       - name: Preparing gdrive folder
         run: echo GDRIVE_FOLDER_ID = ${{ github.event.inputs.gdriveid }} >> config.env
       - name: Building Bot
-        run: docker build . -t mirror-bot
-      - name: Bot is running for 6 hours. Join t.me/drivetalk for any question
-        run: docker run mirror-bot
+        run: docker build . -t m
+      - name: Bot will be running for 6 hours. Join t.me/drivetalk for any question
+        run: docker run m
